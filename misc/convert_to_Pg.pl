@@ -13,7 +13,6 @@ s| ENGINE=InnoDB||g;
 s|BIGINT UNSIGNED|BIGINT|g;
 s|UNIQUE KEY\(|UNIQUE(|g;
 s|TINYINT |SMALLINT |g;
-s|CREATE TABLE (\w+) SELECT |CREATE TABLE $1 AS SELECT |g;
 s|PRIMARY KEY id |PRIMARY KEY |g;
 s|created_at INT NOT NULL|created_at INTEGER NOT NULL default floor(extract(epoch from now()))|g;
 s|updated_at TIMESTAMP|updated_at TIMESTAMP default now()|g;

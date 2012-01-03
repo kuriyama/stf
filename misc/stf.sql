@@ -34,10 +34,10 @@ CREATE TABLE object (
        UNIQUE KEY(internal_name)
 ) ENGINE=InnoDB;
 
-CREATE TABLE deleted_object ENGINE=InnoDB SELECT * FROM object LIMIT 0;
+CREATE TABLE deleted_object ENGINE=InnoDB AS SELECT * FROM object LIMIT 0;
 ALTER TABLE deleted_object ADD PRIMARY KEY(id);
 -- ALTER TABLE deleted_object ADD UNIQUE KEY(internal_name);
-CREATE TABLE deleted_bucket ENGINE=InnoDB SELECT * FROM bucket LIMIT 0;
+CREATE TABLE deleted_bucket ENGINE=InnoDB AS SELECT * FROM bucket LIMIT 0;
 ALTER TABLE deleted_bucket ADD PRIMARY KEY(id);
 
 CREATE TABLE entity (
