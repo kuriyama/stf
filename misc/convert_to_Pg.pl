@@ -10,7 +10,7 @@ $_ = read_file($file) or die "open($file): $!";
 
 my @idx;
 s| ENGINE=InnoDB||g;
-s|BIGINT +UNSIGNED|BIGINT|g;
+s|BIGINT UNSIGNED|BIGINT|g;
 s|UNIQUE KEY\(|UNIQUE(|g;
 s|TINYINT |SMALLINT |g;
 s|CREATE TABLE (\w+) SELECT |CREATE TABLE $1 AS SELECT |g;

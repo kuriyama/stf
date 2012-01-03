@@ -3,7 +3,7 @@ CREATE TABLE storage (
        id INT NOT NULL PRIMARY KEY,
        uri VARCHAR(100) NOT NULL,
        mode TINYINT NOT NULL DEFAULT 1,
-       used BIGINT  UNSIGNED NOT NULL DEFAULT 0,
+       used BIGINT UNSIGNED NOT NULL DEFAULT 0,
        capacity BIGINT UNSIGNED NOT NULL DEFAULT 0,
        created_at INT NOT NULL,
        updated_at TIMESTAMP,
