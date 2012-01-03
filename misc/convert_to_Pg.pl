@@ -41,6 +41,14 @@ CREATE OR REPLACE FUNCTION update_stamp() RETURNS trigger AS $update_stamp$
     RETURN NEW;
   END;
 $update_stamp$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION unix_timestamp(timestamp with time zone) RETURNS int AS $unix_timestamp$
+  DECLARE
+    date alias for $1;
+  BEGIN
+    RETURN extract(epoch from date)::int;
+  END
+$unix_timestamp$ LANGUAGE plpgsql;
 END
 
 foreach (qw(storage bucket object entity)) {
